@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
 //Recibo parametros por referencia, indico esto con el simbolo& -> indica que el parametro modificado 
 //dentro de mi funcion, de igual forma sera modificado el valor que  me manden como argunmento
 //& -> TOMA AL ARGUMENTO Y A LOS PARAMETROS COMO LA MISMA VARIABLE
@@ -9,7 +8,6 @@ inline void triplica(int& a, int& b, int& c){
   a*=3;
   b*=3;
   c*=3;
-
 }
 
 int main(){
