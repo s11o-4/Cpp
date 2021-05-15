@@ -38,55 +38,18 @@ int main(){
   //string b("Nomrbe de la variable");
   
 //------------------------------
-//
-//
-//las funciones son para chars:
-//+ strcpy 
-//+ strcmp
-//+ strrvs - no sirve
-//+ strupr - no sirve 
-//+ strlwr - no sirve
+
+// Funciones para char
 //+ atoi() - convierte enteros
 //+ atof() - convierte flotantes
 
-  char nombre[] = "Ruben";
-  char nombre2[10];
+	//segunda forma de pasar de ascii a numro:
+	//0 = 48
+	//9 = 57
+	//
+	//Asi que a un char le restas '0' y te dara el numero en enteros
+	//
+  //toupper() -> mayusculas 
+	//tolower() -> minusculas
 
-  strcpy(nombre2, nombre);
-  cout<<nombre2<<endl;
-
-  //strcmp(cadena1, cadena2);//retorna 0
-  
-  char letra1[] = "aaa";
-  char letra2[] = "aaa";
-
-  if(strcmp(letra1, letra2)==0){
-    cout<<"Ambas cadenas son iguales";
-  }
-
-  char cadena_parse[] = "123";
-  int number_cadena = atoi(cadena_parse);
-
-  cout<<"\n"<<number_cadena;
-
-  char cadena_flotante[] = "1.34";
-  float number_cadena_flotante = atof(cadena_flotante);
-  
-  cout<<"\n"<<number_cadena_flotante;
-
-//segunda forma de pasar de ascii a numro:
-//
-//0 = 48
-//9 = 57
-//
-//Asi que a un char le restas '0' y te dara el numero en entero
-
-
-/*
- * morgue:
-  char segundonombre[] = "Ruben";
-  strrev(segundonombr);
-  cout<<"\n"<<segundonombre;
-*/
-   
 }

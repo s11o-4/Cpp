@@ -5,6 +5,8 @@ using namespace std;
 //dentro de mi funcion, de igual forma sera modificado el valor que  me manden como argunmento
 //& -> TOMA AL ARGUMENTO Y A LOS PARAMETROS COMO LA MISMA VARIABLE
 inline void triplica(int& a, int& b, int& c){
+  // funciones inline. No son llamadas en el codigo abierto. son insertadas
+  // desde donde las llames
   a*=3;
   b*=3;
   c*=3;
