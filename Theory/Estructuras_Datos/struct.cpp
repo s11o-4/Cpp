@@ -18,6 +18,15 @@ struct Estructura2
     }
 };
 
+struct Estructura3{
+    int number; 
+    string name;
+};
+
+struct Estructura4{
+    Estructura3 objeto_anidado;  
+};
+
 int main()
 {
     struct Estructura1 obj1 = {10, "hola", 13.23}; //El uso de struct no es necesario, pero se ve mas elegante
@@ -46,6 +55,17 @@ int main()
     };
     struct Estructura_Interna objeto_struct_interno = {10, "hellou"};
     cout<<objeto_struct_interno.numero1<<"\n";
+
+    //Estructuras anidadas
+    Estructura4 obj4;
+    obj4.objeto_anidado.name = "Ruben";
+    cout<<obj4.objeto_anidado.name<<"\n";
+
+    Estructura3 obj3;
+    //No imprimira nada, puesto que ese objeto le pertenece al strcut
+    //4, no al 3. Esta anidado. No heredado. Declaras la misma variable 
+    //pero en otra estructura, basandote en la anterior
+    cout<<"El nombre, desde la estructura 3, es : "<<obj3.name<<"\n";
 }
 
 

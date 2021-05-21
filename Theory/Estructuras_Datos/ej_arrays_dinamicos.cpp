@@ -36,14 +36,12 @@ int main()
         //cin >> autores[i]; //No funciona con espacios
         getline(cin, autores[i]);
     }
-
+    
     //Liberamos la memoria de ambos punteros
     delete[] titulos;
     delete[] autores;
     titulos = NULL;
     autores = NULL;
-
-    system("pause");
 
     return 0;
 }

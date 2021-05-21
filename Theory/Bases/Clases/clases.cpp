@@ -9,8 +9,7 @@ public://Acces specifier
     void volumen(int num1, int num2, int num3)
     {
         int result = num1 * num2 * num3;
-        cout << "\n"
-             << result << "\n";
+        cout << "\n"<< result << "\n";
     }
     inline void saluda(string saluda);
     void clima(int dia);
@@ -31,7 +30,6 @@ void Rectangulo::clima(int dia)
         cout << "\n10° \n";
     }
 }
-
 class Constructor
 {
 public:
