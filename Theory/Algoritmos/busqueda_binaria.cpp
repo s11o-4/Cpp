@@ -22,11 +22,17 @@ using namespace std;
     5. Si tu numero esta mas arriba que la posicion mitad, entonces tu menor 
     sera la mitad y tu mayor se va a mantener
 
-    notas:
+    --------------notas:-------------------
     Este patron se repetira hasta que se encuentre el numero. Pero toma en 
     cuenta, que tu siempre irás reduciendo el rango. 2 a la x. tambien 
     toma en cuenta, que no porque una ves vue menor siempre lo sera. 
     Puede que te pases, pero entonces irás delimitando tus rangos.
+
+    lo de arriba en fórmula:
+
+        n
+    ------------   =  1 
+    2(elevado x)
 
     En resumen, cuando tu determinas si tu numero es mas grande al que estas 
     ahora, estas ascendiendo el contador. y cuando es mas pequeño, estas 
@@ -39,11 +45,23 @@ using namespace std;
     de valores. porque?, -> tu reduces tu cadena cada vez a la mitad, jamas se 
     va a sobrepasar. Aun asi lo colocas para que sea mas expresivo
     Tu te pueds dar cuenta que no encontro el elemento, cuando 
-    el numero de ejecuciones, se excede a la cantidad de elementos de 
     tu array
 
+    el numero de ejecuciones, se excede a la cantidad de elementos de 
     Tu array ademas de estar ordenado, no se puede saltar numeros.
-    Esta directamente relacionados los numeros con los indices
+    Esta directamente relacionado los numeros con los indices (en uno menos
+    simpre)
+
+    Lo mas ideal en una busqueda binaria, es que tu máximo
+    no sea el numero mas grande de longitud de tu array.
+    Lo ideal es que tu máximo, sea el logaritmo base 2 de tu máximo
+    porque?. eso es porque el tipo de reduccion final que tu tendrás
+    será cuadrática (todo el timpo vas dividiendo entre 2)
+
+
+    (menor + mayor) / 2  =  izq + (mayor - menor) / 2
+    la segunda es mejor. ya que la primera puede generar 
+    un desbordamiento de memoria
 */
 int main()
 {
@@ -56,7 +74,9 @@ int main()
     inf = 0;
     sup = 5;
     i = 0;
-    
+
+    //lo correcto -> log2(5) 
+    //que sea -> i <= log2(5)
     while ((inf <= sup) && (i < 5)) //Si tu dejas 
     //aquí solamente el primer condicional. tu programa 
     //crasheara si no existe el elemento en el array.

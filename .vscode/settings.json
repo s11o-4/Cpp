@@ -2,6 +2,8 @@
     "files.associations": {
         "memory_resource": "cpp",
         "future": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "iosfwd": "cpp",
+        "iostream": "cpp"
     }
 }

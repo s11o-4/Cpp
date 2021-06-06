@@ -1,45 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Nodo
-{
-    int dato;
-    Nodo *der;
-    Nodo *izq;
-};
+// Recursividad 1
+// int factorial(int n)
+// {
+//     if (n == 0)
+//     {
+//         return 1;
+//     }
+//     else
+//     {
+//         n = n * factorial(n - 1);
+//     }
+//     return n;
+// }
 
-Nodo *crear_nodo(int n)
+// int main()
+// {
+//     cout << factorial(10) << endl;
+// }
+ 
+int factorial(int n)
 {
-    Nodo *nuevo_nodo = new Nodo();
-    nuevo_nodo->dato = n;
-    nuevo_nodo->der = NULL;
-    nuevo_nodo->izq = NULL;
-    return nuevo_nodo;
-}
-
-void insertar_nodo(Nodo *&arbol, int dato)
-{
-    if (arbol == NULL)
+    if (n == 1)
     {
-        Nodo *nuevo_nodo = crear_nodo(dato);
-        arbol = nuevo_nodo;
+        return 1;
     }
-    else
-    {
-        int valor_raiz = arbol->dato;
-        if (valor_raiz < dato)
-        {
-            insertar_nodo(arbol->der, dato);
-        }
-        if (valor_raiz > dato)
-        {
-            insertar_nodo(arbol->izq, dato);
-        }
-    }
+    return n * factorial(n - 1);
 }
 
 int main()
 {
-    Nodo *arbol = NULL;
-    insertar_nodo(arbol, 10);
+    cout << factorial(5) << endl;
 }

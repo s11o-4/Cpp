@@ -6,46 +6,43 @@ int main()
     long edificios;
     cin >> edificios;
     long alturas[edificios];
-    long mayor;
-    bool inicio_flag = false;
+    long mayor = -1;
+    bool primer_menor = true;
     long *contador;
     contador = new long[edificios];
-    long hijo_mayor;
-    int a = 0;
+    long hijo_mayor = -1;
+    int a = -1;
     for (long i = 0; i < edificios; i++)
     {
         cin >> alturas[i];
-        if (inicio_flag == false)
+
+        if (alturas[i] >= mayor)
         {
             mayor = alturas[i];
             hijo_mayor = alturas[i];
-            inicio_flag = true;
-            contador[a]++;
+            a += 1;
         }
-        else
+        else if (alturas[i] < hijo_mayor)
         {
-            if (alturas[i] > mayor)
+            if (primer_menor)
             {
-                mayor = alturas[i];
-                hijo_mayor = alturas[i];
-                a++;
-                contador[a]++;
+                primer_menor = false;
+                contador[a] += 1;
             }
-            else if (alturas[i] < hijo_mayor && alturas[i] != hijo_mayor)
-            {
-                hijo_mayor = alturas[i];
-                contador[a]++;
-            }
+            hijo_mayor = alturas[i];
+            contador[a] += 1;
         }
     }
-    long longitud = sizeof(contador) / sizeof(contador[0]);
-    long result = contador[0];
-    for (long i = 0; i <= longitud; i++)
+
+    sort(contador, contador + edificios);
+    reverse(contador, contador + edificios);
+    if (contador[0] == 0)
     {
-        if(result < contador[i]){
-            result = contador[i];
-        }
+        cout << 1;
     }
-    cout<<result;
+    else
+    {
+        cout << contador[0];
+    }
     delete[] contador;
 }

@@ -33,6 +33,7 @@ Nodo *crearNodo(int n)
     return nuevo_nodo;
 }
 
+//insertar
 void insertar_Nodo(Nodo *&arbol, int n)
 {
     if (arbol == NULL)
@@ -55,7 +56,23 @@ void insertar_Nodo(Nodo *&arbol, int n)
     }
 }
 
-void mostrar_nodos(Nodo *arbol, int cont)
+//mostrar
+void mostrar_nodos(Nodo *cpy_arbol)
+{
+    if (cpy_arbol == NULL)
+    {
+        return;
+    }
+    else
+    {
+        mostrar_nodos(cpy_arbol->der);
+        cout << cpy_arbol->dato << "\n";
+        mostrar_nodos(cpy_arbol->izq);
+    }
+}
+
+//mostrar en pre-orden - primero raiz, luego izquerda, y luego parte derecha
+void PreOrden(Nodo *arbol)
 {
     if (arbol == NULL)
     {
@@ -63,20 +80,60 @@ void mostrar_nodos(Nodo *arbol, int cont)
     }
     else
     {
-        mostrar_nodos(arbol->der, cont++);
-        bool bandera = false;
-        for (int i = 0; i < cont; i++)
-        {
-            if(bandera == false){
-                cout<<"me ejecuto\n";
-                cout<<"contador vale: "<<cont<<"\n";
-                bandera = true;
-            }
-            cout << "   ";
-            cout<<"estoy imprimiendo los espacios de : "<<arbol->dato<<"\n";
-        }   
-        cout << arbol->dato << endl;
-        mostrar_nodos(arbol->izq, cont++);
+        cout << arbol->dato << " - ";
+        PreOrden(arbol->izq);
+        PreOrden(arbol->der);
+    }
+}
+//in-orden - izquierda, raiz, derecho
+void InOrden(Nodo *arbol)
+{
+    if (arbol == NULL)
+    {
+        return;
+    }
+    else
+    {
+        InOrden(arbol->izq);
+        cout << arbol->dato << " - ";
+        InOrden(arbol->der);
+    }
+}
+
+// PostOrden -> izquierdo, derecho y al final la raiz
+void PostOrden(Nodo *arbol)
+{
+    if (arbol == NULL)
+    {
+        return;
+    }
+    else
+    {
+        PostOrden(arbol->izq);
+        PostOrden(arbol->der);
+        cout << arbol->dato << " - ";
+    }
+}
+
+
+//busqueda
+bool busqueda(Nodo *arbol, int n)
+{
+    if (arbol == NULL)
+    {
+        return false;
+    }
+    else if (n == arbol->dato)
+    {
+        return true;
+    }
+    else if (n < arbol->dato)
+    {
+        busqueda(arbol->izq, n);
+    }
+    else
+    {
+        busqueda(arbol->der, n);
     }
 }
 
