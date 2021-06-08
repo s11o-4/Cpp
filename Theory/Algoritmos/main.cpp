@@ -1,35 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Recursividad 1
-// int factorial(int n)
-// {
-//     if (n == 0)
-//     {
-//         return 1;
-//     }
-//     else
-//     {
-//         n = n * factorial(n - 1);
-//     }
-//     return n;
-// }
-
-// int main()
-// {
-//     cout << factorial(10) << endl;
-// }
- 
-int factorial(int n)
-{
-    if (n == 1)
-    {
-        return 1;
-    }
-    return n * factorial(n - 1);
-}
-
 int main()
 {
-    cout << factorial(5) << endl;
+    int arr1[7] = {2,4,5,9,12,15,21};
+    int arr2[4] = {8,10,15,20};
+
+    int *proto_acumulado = NULL;
+    int max = 0;
+    for (int i = 0; i < 4; i++)
+    {
+        if(arr2[i] > max)
+        {
+            max = arr2[i];
+        }
+    }
+    proto_acumulado = new int[max];
+    sort(arr1, arr1 + 7);
+    for (int l = 0; l < max; l++)
+    {
+        if(arr1[l] <= max)
+        {
+            
+        }
+    }
+    
 }
