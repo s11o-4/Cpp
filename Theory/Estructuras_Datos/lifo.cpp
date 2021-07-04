@@ -11,7 +11,7 @@ Crear una pila:
 struct Nodo
 {
     int dato;
-    Nodo *siguiente; // Puntero, para poder acceder a la posicion en 
+    Nodo *siguiente; // Puntero, para poder acceder a la posicion en
     //memoria de mis siguientes datos, el cual cada nodo, tendra dos datos
 };
 
@@ -43,6 +43,33 @@ void mostrarPIla(Nodo *pila)
         cout << valor << "\n";
         pila = pila->siguiente;
     }
+}
+
+//elimina un nodo concreto de tu pila
+bool elimina(Nodo *&pila, int n)
+{
+    if (pila != NULL)
+    {
+        if (pila->siguiente->dato == n)
+        {
+            pila->siguiente = pila->siguiente->siguiente;
+            return true;
+        }
+        else if (pila->dato == n)
+        {
+            pila = pila->siguiente;
+            return true;
+        }
+        else
+        {
+            elimina(pila->siguiente, n);
+        }
+    }
+    else
+    {
+        return false;
+    }
+    return true;
 }
 
 int main()

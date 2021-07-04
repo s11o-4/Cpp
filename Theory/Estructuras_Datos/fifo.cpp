@@ -7,6 +7,7 @@ using namespace std;
     2. Asignar ese nuevo nodo al dato que queremos insertar.
     3. Asignar los punteros frente y fin hacia el nuevo nodo.
 */
+
 struct Nodo
 {
     int dato;
@@ -58,6 +59,31 @@ void suprimirCola(Nodo *&frente, Nodo *&fin, int &n)
     delete aux; // Aqui elimino la copia
 }
 
+// Reto - elimianr un nodo en especifico. Recrea este script..., porque es
+// un asco..., lo mismo para lifo
+// void eliminar_nodo(Nodo *&frente, int n)
+// {
+//     Nodo *cpy_frente = frente;
+//     Nodo *cpy_cola = NULL;
+//     while (cpy_frente != NULL)
+//     {
+//         if (cpy_frente->siguiente->dato == n)
+//         {
+//             cpy_frente = cpy_frente->siguiente->siguiente;
+//             frente = cpy_frente;
+//         }
+//         else if (cpy_frente->dato == n)
+//         {
+//             cpy_frente = cpy_frente->siguiente;
+//             frente = cpy_frente;
+//         }
+//         else
+//         {
+//             cpy_frente = cpy_frente->siguiente;
+//         }
+//     }
+// }
+
 int main()
 {
     Nodo *frente = NULL;
@@ -71,6 +97,10 @@ int main()
     cout << "Digite un numero: ";
     cin >> dato;
     insertarCola(frente, fin, dato);
+
+    // cout << "\n";
+    // cout << "eliminar nodo en especifico";
+    // eliminar_nodo(frente, dato);
 
     cout << "\n";
     cout << "Quitando los elementos de la cola: ";

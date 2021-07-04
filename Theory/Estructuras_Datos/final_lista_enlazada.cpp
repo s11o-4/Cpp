@@ -1,75 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-    Insertar elementos en una lista 
-    1. Crear un nuevo nodo 
-    2. Asignar a nuevo_nodo->dato el elemento que queremos incluir en la lista 
-    3. Crear dos nodos auxiliares y asignar lista al primero de ellos
-    4. Insertar el elemento a la lista
-*/
-
-struct Nodo
-{
-    int dato;
-    Nodo *siguiente;
-};
-
-void insertarLista(Nodo *&lista, int n)
-{
-    Nodo *nuevo_nodo = new Nodo();
-    nuevo_nodo->dato = n;
-
-    Nodo *aux1 = lista;
-    Nodo *aux2;
-
-    while (aux1 != NULL && aux1->dato < n)
-    {
-        aux2 = aux1;
-        aux1 = aux1->siguiente;
-    }
-
-    if (lista == aux1) //Lista (el puntero), no se va a cambiar
-    //hasta que que tu tengas un valor menor a tu tope de la lista
-    //Todo esto es un algoritmo (de extraccion), de tipo "el mas pequeño
-    //es el primero en salir"
-    {
-        lista = nuevo_nodo;
-        cout << "me ejecuto cuando el nuevo dato es menor, igual, o es la priemera ejecucion\n ";
-    }
-    else
-    {
-        aux2->siguiente = nuevo_nodo;
-    }
-    nuevo_nodo->siguiente = aux1;
-    cout << "Elemento " << n << " insertado a lista correctamente\n";
-}
-
-int main()
-{
-    Nodo *lista = NULL;
-
-    int dato;
-    cout << "Digite un numero: ";
-    cin >> dato;
-    insertarLista(lista, dato);
-    cout << "Digite un numero: ";
-    cin >> dato;
-    insertarLista(lista, dato);
-    cout << "Digite un numero: ";
-    cin >> dato;
-    insertarLista(lista, dato);
-
-    return 0;
-}
-
-/*
-
-Reto (eliminar, vaciar y eliminar uno en especifico)
-
-#include <bits/stdc++.h>
-using namespace std;
-
 struct Nodo
 {
     int dato;
@@ -129,7 +60,7 @@ void acumuladora(int num)
 {
     Nodo *nuevo_nodo = new Nodo();
     nuevo_nodo->dato = num;
-    nuevo_nodo->siguiente = NULL; // por defecto ya es NULL, pero por 
+    nuevo_nodo->siguiente = NULL; // por defecto ya es NULL, pero por
     //elegancia, yo lo escribo
     if (inicio_acumuladora == NULL)
     {
@@ -154,9 +85,49 @@ void eliminar_nodo_especifico(Nodo *&pila_datos, int dato_eliminar)
         auxiliar = auxiliar->siguiente;
     }
 
-    //Reemplazo la anterior pila, por la buena (la que ya no tiene 
+    //Reemplazo la anterior pila, por la buena (la que ya no tiene
     //el elemento)
     pila_datos = inicio_acumuladora;
+}
+
+//solucion de ATS
+void eliminarnodo(Nodo *&lista, int n)
+{
+    if (lista != NULL)
+    {
+        Nodo *aux_borrar;
+        Nodo *anterior = NULL;
+
+        aux_borrar = lista;
+
+        while ((aux_borrar != NULL) && (aux_borrar->dato != n))
+        {
+            anterior = aux_borrar;
+            aux_borrar = aux_borrar->siguiente;
+        }
+        if (aux_borrar == NULL)
+        {
+            cout << "<<Elemento no encontrado>>";
+        }
+        else if (anterior == NULL)
+        {
+            lista = lista->siguiente;
+            delete aux_borrar;
+        }
+        else
+        {
+            // no es lo mismo iterarte a ti mismo como puntero
+            // que otro puntero toma tu valor y acceda a tí.
+            // en el momento en el que anterior se vuelve igual a aux_borrar
+            // igualmente se volvera igual a lista. El valor de lista
+            // no cambio cuando lo recorriste..., porque no estabas como tal
+            // recorriendo lista..., tu estabas recorriendo a aux_borrar, pero
+            // ambos llegan al mismo punto. digamos que uno sufre para que
+            // no le pase nada al otro
+            anterior->siguiente = aux_borrar->siguiente; // borras ese nodo intermedio
+            delete aux_borrar;
+        }
+    }
 }
 
 int main()
@@ -171,5 +142,9 @@ int main()
     mostrar_nodos(pila_datos);
     eliminar_nodo_especifico(pila_datos, 367);
     mostrar_nodos(pila_datos);
+    cout << endl;
+    cout << "test de solucion ats\n";
+    eliminarnodo(pila_datos, 11);
+    mostrar_nodos(pila_datos);
+    cout << endl;
 }
-*/

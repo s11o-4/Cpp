@@ -4,6 +4,13 @@
         "future": "cpp",
         "tuple": "cpp",
         "iosfwd": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "functional": "cpp",
+        "new": "cpp",
+        "string": "cpp",
+        "sstream": "cpp",
+        "ostream": "cpp",
+        "algorithm": "cpp",
+        "vector": "cpp"
     }
 }

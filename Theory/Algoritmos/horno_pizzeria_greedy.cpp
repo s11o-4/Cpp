@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//Esta es mi solucion al problema de los hornos y las pizzas 
+//Esta es mi solucion al problema de los hornos y las pizzas
 //con algoritmos greedy
 
 int cantidad_ordenes = 0;
@@ -34,6 +34,7 @@ int main()
         limite[indice_aux] = cpy_valor_limite;
         duracion[indice_aux] = cpy_valor_duracion;
     }
+    //Ojo, tus limites son por órden. no todo general, si todo fuese general podrias sumar tus limites, pero no es el caso
 
     int contador_duracion = 0;
     int tiempo_espera = 0;

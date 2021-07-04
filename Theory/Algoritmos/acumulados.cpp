@@ -2,6 +2,9 @@
 using namespace std;
 
 //Algoritmo de arreglo de acumulados
+//Este algoritmo solo funcionará siempre y cuando tu array sea 
+// menor que 10⁹
+
 int movimientos, especies;
 int valores_ataque[10005];
 int pokemon[10005];
