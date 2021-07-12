@@ -11,6 +11,7 @@
         "sstream": "cpp",
         "ostream": "cpp",
         "algorithm": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "deque": "cpp"
     }
 }

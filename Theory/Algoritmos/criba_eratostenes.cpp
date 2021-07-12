@@ -7,6 +7,7 @@ using namespace std;
 bool criba[100];
 vector<int> primos;
 
+//Algoritmo para crear la tabla de eratostenes
 int main()
 {
     int longitud = sizeof(criba) / sizeof(criba[0]);
@@ -15,9 +16,10 @@ int main()
         criba[i] = 1;
     }
 
-    int max = sqrt(longitud);
+    int limite = sqrt(longitud);
+
     //si tu ultimo elemento es primo, igual lo quieres tomar en cuenta, por eso es '='
-    for (int i = 2; i <= max; i++)
+    for (int i = 2; i <= limite; i++)
     {
         if (criba[i])
         {

@@ -9,8 +9,8 @@ int main()
     int array[8] = {1, 3, 2, 5, 1, 1, 2, 3};
     int buscar = 0;
     cin >> buscar;
-    int l = 1;
     int i = 0;
+    int l = 1;
     int encontrado = array[i] + array[l];
     while (l != i)
     {

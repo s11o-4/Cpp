@@ -25,7 +25,7 @@ using namespace std;
     --------------notas:-------------------
     Este patron se repetira hasta que se encuentre el numero. Pero toma en 
     cuenta, que tu siempre irás reduciendo el rango. 2 a la x. tambien 
-    toma en cuenta, que no porque una ves vue menor siempre lo sera. 
+    toma en cuenta, que no porque una ves fué menor, siempre lo sera. 
     Puede que te pases, pero entonces irás delimitando tus rangos.
 
     lo de arriba en fórmula:
@@ -62,6 +62,10 @@ using namespace std;
     (menor + mayor) / 2  =  izq + (mayor - menor) / 2
     la segunda es mejor. ya que la primera puede generar 
     un desbordamiento de memoria
+
+    Tu no asignas, hasta que no calculas la mitad.
+    Despues de saber si tu elemento esta atras o adelante
+    entonces ya asignas el límite superior y el límite inferior
 */
 int main()
 {

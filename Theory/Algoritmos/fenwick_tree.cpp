@@ -35,6 +35,7 @@ int getSum(int BITree[], int index)
 void updateBIT(int BITree[], int n, int index, int val)
 {
     // index in BITree[] is 1 more than the index in arr[]
+    // here does not exists "0"
     index = index + 1;
 
     // Traverse all ancestors and add 'val'
@@ -46,6 +47,7 @@ void updateBIT(int BITree[], int n, int index, int val)
         BITree[index] += val;
 
         // Update index to that of parent in update View
+        // <complemento a dos>
         index += index & (-index);
     }
 }

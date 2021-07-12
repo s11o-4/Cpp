@@ -2,7 +2,8 @@
 using namespace std;
 
 //Algoritmo de los dos punteros.
-//Objetivo: saber si dos numeros de mi array, me dan el número deseado
+//Objetivo: saber si dos numeros de mi array, me dan el
+//número deseado
 //el puntero menor aumenta, y el puntero mayor decrece
 int main()
 {

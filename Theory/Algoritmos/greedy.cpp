@@ -30,16 +30,18 @@ int main()
     //y ordenarlo así, con base a tu tiempoLímite,
     //no a  tu tiempo de duracion.
 
+    cout << endl;
     //visualizar ordenamiento
     for (int i = 0; i < totalActividades; i++)
     {
-        cout << actividades[i].duracion << actividades[i].tiempoLimite << "\n";
+        cout << actividades[i].duracion << " " << actividades[i].tiempoLimite << "\n";
     }
     cout << "\n";
 
     for (int i = 0; i < totalActividades; i++)
     {
         tiempoTotal += actividades[i].duracion;
+        cout << "tiempoTotal: " << tiempoTotal << "\n";
         tardanzaMaxima = max(tardanzaMaxima, tiempoTotal - actividades[i].tiempoLimite);
         //usas max, porque si hay una tardanza mayor a cero, entonces quieres usar
         //esa tardanza
@@ -56,6 +58,10 @@ Casos de ejemplo:
 3 6
 2 4
 1 2
+-------------lo de arriba ordenado pasa a ser:
+1 2
+2 4
+3 6
 
 2
 1 2
