@@ -72,8 +72,7 @@ int main(){
   int limit_radio = width - center_x;
 
   if(area_circule < area_rectangle){
- 
-    
+
     if(limit_radio >= radio){
       if(limit_distance_x >= radio){
         if(limit_distance_y >= radio){
