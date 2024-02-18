@@ -10,6 +10,9 @@ int main(){
   string string_number1 = to_string(number1);
   string string_number2 = to_string(number2);
 
+
+
+
   int length1 = string_number1.size();
   int length2 = string_number2.size(); 
 
