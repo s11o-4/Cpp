@@ -23,6 +23,7 @@ int main()
 	int A_B = A + B;
 	numbers.erase(find(numbers.begin(), numbers.end(), A_B));
 
+
 	int C = *min_element(numbers.begin(), numbers.end());		
 
 	cout << A << " " << B << " " << C;

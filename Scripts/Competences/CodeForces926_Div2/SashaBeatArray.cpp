@@ -18,19 +18,9 @@ int main()
 		{
 			cin >> arr[i];
 		}
-		int min = arr[0];
+		//int min = arr[0];
 		sort(arr, arr + n);
-//		for(int i = 0; i < n; i++)
-//		{
-//			if(arr[i] < min)
-//			{
-//
-//			}
-//		}
-//		for(int i = 0; i < n; i++)
-//		{
-//			cout << "[" << arr[i] << "]";
-//		}
+
 		int result = 0;
 		for(int i = 1; i < n; i++)
 		{
