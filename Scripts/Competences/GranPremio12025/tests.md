@@ -1,0 +1,23 @@
+### Problema A 
+ZKX
+3
+LKJSDLFKA 
+ZKXZKXZKXA 
+ZKXZKXZKX
+
+### Problema E
+
+### Problem D
+4
+7 20 11 1000000
+3
+0 2 1 1
+1 3 2 1
+1 2 1 1000000
+
+4
+7 20 11 10
+3
+0 2 1 1
+1 3 2 1
+1 2 1 10
