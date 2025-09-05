@@ -5,10 +5,11 @@ using namespace std;
 
 
 int main() {
-    int n;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    long long n;
     cin >> n;
-
-    for (int i = 0;i < n;i++) {
+    while(n--){
         long long a,b,c,d;
         long long result;
         cin >> a >> b >> c >> d;
@@ -22,6 +23,5 @@ int main() {
         } else {
             cout << result << endl;
         }
-
     }
 }
